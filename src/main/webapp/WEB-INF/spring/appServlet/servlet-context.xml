@@ -23,13 +23,15 @@
 	
 	<!-- ************************* [added] ***************************** -->
 	<context:component-scan base-package="local.study.spring" />
-	
+	<!-- 
 	<beans:bean id="humanFactory" class="org.springframework.beans.factory.config.ServiceLocatorFactoryBean">
 		<beans:property name="serviceLocatorInterface" value="local.study.spring.service.model.HumanFactory" />
 	</beans:bean>
-
-	<!-- <beans:alias name="man" alias="m"/>
-	<beans:alias name="woman" alias="wm"/> -->
+ 	-->
+	<!-- 
+	<beans:alias name="man" alias="m"/>
+	<beans:alias name="woman" alias="wm"/> 
+	-->
 	
 	<!-- ************************* [added] ***************************** -->
 	

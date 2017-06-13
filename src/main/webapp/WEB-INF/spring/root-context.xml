@@ -8,6 +8,4 @@
 		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-3.1.xsd">
 	
 		<!-- Root Context: defines shared resources visible to all other web components -->
-		
-		<util:properties id="testProp" location="classpath:/test.properties" />
 </beans>

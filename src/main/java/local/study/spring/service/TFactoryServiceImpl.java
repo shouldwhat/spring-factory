@@ -5,23 +5,20 @@ import java.util.List;
 
 import javax.annotation.PostConstruct;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import local.study.spring.service.model.Human;
 import local.study.spring.service.model.HumanFactory;
 import local.study.spring.service.model.ISay;
 
 @Service
 public class TFactoryServiceImpl implements TFactoryService
 {
-	private static final Logger logger = LoggerFactory.getLogger(TFactoryServiceImpl.class);
+	List<ISay> humanList;
 	
 	@Autowired
 	private HumanFactory HumanFactory;
-	
-	List<ISay> humanList;
 	
 	@PostConstruct
 	public void initialize()
@@ -30,26 +27,23 @@ public class TFactoryServiceImpl implements TFactoryService
 	}
 	
 	@Override
-	public void createMan()
+	public void createHuman(String sex) 
 	{
-		ISay man = HumanFactory.createHuman("man");
+		/* Create Human From HumanFactory */
+		ISay sayableHuman = HumanFactory.createHuman(sex);
 		
-		man.say(humanList.size());
+		/* Set Human */
+		Human human = (Human) sayableHuman;
 		
-		humanList.add(man);
+		human.setAge(humanList.size());
 		
-		logger.info(humanList.toString());
+		/* Save Human */
+		humanList.add(human);
 	}
 
 	@Override
-	public void createWoman()
+	public List<ISay> getHumanList() 
 	{
-		ISay woman = HumanFactory.createHuman("woman");
-		
-		woman.say(humanList.size());
-		
-		humanList.add(woman);
-		
-		logger.info(humanList.toString());
+		return humanList;
 	}
 }

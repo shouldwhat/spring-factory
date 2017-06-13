@@ -1,33 +1,29 @@
 package local.study.spring.service.model;
 
-import java.util.Properties;
-
-import org.springframework.beans.factory.annotation.Autowired;
-
 public abstract class Human implements ISay
 {
 	private String sex;
 	
 	private int age;
 	
-	@Autowired
-	private Properties testProp;
-	
 	public Human(String sex)
 	{
 		this.sex = sex;
-		this.age = -1;
+	}
+	
+	public void setAge(int age)
+	{
+		this.age = age;
 	}
 
 	@Override
-	public void say(int age)
+	public void say()
 	{
-		this.age = age;
 		this.toString();
 	}
 
 	@Override
-	public String toString()
+	public String toString() 
 	{
 		return "Human [sex=" + sex + ", age=" + age + "]";
 	}

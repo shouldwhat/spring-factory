@@ -2,5 +2,5 @@ package local.study.spring.service.model;
 
 public interface ISay
 {
-	public void say(int age);
+	public void say();
 }
